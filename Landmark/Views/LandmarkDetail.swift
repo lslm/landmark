@@ -1,25 +1,18 @@
-//
-//  LandmarkDetail.swift
-//  Landmark
-//
-//  Created by Lucas Santos on 22/04/22.
-//
-
 import SwiftUI
 
 struct LandmarkDetail: View {
     var landmark: Landmark
-    
+
     var body: some View {
         ScrollView {
             MapView(coordinate: landmark.locationCoordinates)
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
-            
+
             CircleImage(image: landmark.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
-            
+
             VStack(alignment: .leading) {
                 Text(landmark.name)
                     .font(.title)
@@ -30,9 +23,9 @@ struct LandmarkDetail: View {
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-                
+
                 Divider()
-                
+
                 Text("About \(landmark.name)")
                     .font(.title2)
                 Text(landmark.description)
@@ -43,7 +36,7 @@ struct LandmarkDetail: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
+    
 struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
         LandmarkDetail(landmark: landmarks[1])

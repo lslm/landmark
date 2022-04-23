@@ -9,19 +9,19 @@ struct Landmark: Hashable, Codable, Identifiable {
     var state: String
     var description: String
     var isFavorite: Bool
-    
+
     private var imageName: String
     var image: Image {
         Image(imageName)
     }
-    
+
     var locationCoordinates: CLLocationCoordinate2D {
         CLLocationCoordinate2D(
             latitude: coordinates.latitude,
             longitude: coordinates.longitude
         )
     }
-    
+
     private var coordinates: Coordinates
     struct Coordinates: Hashable, Codable {
         var latitude: Double
