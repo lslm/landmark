@@ -47,7 +47,7 @@ struct LandmarkDetail: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-    
+
 struct LandmarkDetail_Previews: PreviewProvider {
     static let modelData = ModelData()
 
